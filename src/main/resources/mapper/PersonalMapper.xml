@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="personal.wrui.test.mysql.mybatis.mapper.PersonalMapper">
+	
+	<sql id="table_name">tb_persional</sql>
+	
+	<resultMap type="personal.wrui.test.mysql.mybatis.pojo.dao.Personal" id="personalMap">
+		<association column="id" property="id"  ></association>
+		<association column="name" property="name"  ></association>
+		<association column="age" property="age"  ></association>
+	</resultMap>
+
+	<select id="findAll" resultMap="personalMap">
+			select * from <include refid="table_name"/>;
+	</select>
+	
+	
+	<select id="insertOne" resultType="Integer">
+		insert into <include refid="table_name"/> (name,age) values ("wrui",23);
+	</select>
+
+</mapper>
