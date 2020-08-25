@@ -42,8 +42,16 @@ public class AppTest {
 	}
 	
 	@Test
+	public void pageByNameTest() {
+		System.out.println(JSONObject.toJSONString(personalService.pageByName("wrui")));
+	}
+	
+	
+	
+	@Test
 	public void mybatisFindTest() {
 		personalMapper.insertOne();
 		System.out.println(JSONObject.toJSONString(personalMapper.findAll()));
 	}
+	
 }
