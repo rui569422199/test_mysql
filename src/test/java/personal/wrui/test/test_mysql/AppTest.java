@@ -27,6 +27,21 @@ public class AppTest {
 	}
 	
 	@Test
+	public void findTest() {
+		System.out.println(personalService.getAgeByName("wrui1"));
+	}
+	
+	@Test
+	public void countTest() {
+		System.out.println(personalService.countByName("wrui1"));
+	}
+	
+	@Test
+	public void findByTest() {
+		System.out.println(JSONObject.toJSONString(personalService.findByNameAndAge("wrui", 23)));
+	}
+	
+	@Test
 	public void mybatisFindTest() {
 		personalMapper.insertOne();
 		System.out.println(JSONObject.toJSONString(personalMapper.findAll()));
